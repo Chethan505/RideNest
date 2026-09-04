@@ -1,0 +1,43 @@
+# Maven build output
+backend/target/
+
+# Node dependencies
+frontend/node_modules/
+
+# Vite build output
+frontend/dist/
+
+# User uploaded files
+backend/uploads/licenses/
+
+# Local database files
+backend/data/*.mv.db
+backend/data/*.trace.db
+
+# Logs
+backend/logs/
+*.log
+backend/startup*.log
+backend/error*.log
+backend/scratch_dump.txt
+
+# Test reports
+backend/target/surefire-reports/
+
+# Environment files
+.env
+frontend/.env
+backend/src/main/resources/application-local.properties
+
+# IDE files
+.idea/
+.vscode/*
+!.vscode/extensions.json
+*.iml
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Redis binaries
+Redis/

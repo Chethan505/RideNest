@@ -1,0 +1,163 @@
+/* =========================
+   License Verification Page
+========================= */
+
+.verification-page {
+    max-width: 750px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.back-btn {
+    margin-bottom: 20px;
+}
+
+.verification-card {
+    background: var(--bg-primary);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 32px;
+    box-shadow: 0 15px 40px rgba(0,0,0,.08);
+}
+
+.verification-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--text-primary);
+}
+
+.verification-subtitle {
+    color: var(--text-secondary);
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--text-primary);
+}
+
+.form-group input[type="text"] {
+    width: 100%;
+}
+
+.upload-box {
+    border: 2px dashed var(--glass-border);
+    border-radius: 16px;
+    padding: 28px;
+    text-align: center;
+    cursor: pointer;
+    transition: .3s;
+    background: var(--bg-secondary);
+}
+
+.upload-box:hover {
+    border-color: var(--accent-primary);
+    background: rgba(99,102,241,.05);
+}
+
+.upload-icon {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.upload-title {
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: var(--text-primary);
+}
+
+.upload-subtitle {
+    font-size: .9rem;
+    color: var(--text-secondary);
+}
+
+.upload-box input {
+    display: none;
+}
+
+.file-name {
+    margin-top: 10px;
+    font-size: .9rem;
+    color: var(--success);
+    font-weight: 600;
+    word-break: break-word;
+}
+
+.upload-btn {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.status-card {
+    margin-top: 30px;
+    padding: 18px;
+    border-radius: 14px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--glass-border);
+}
+
+.status-title {
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--text-primary);
+}
+
+.status-approved {
+    color: var(--success);
+    font-weight: 700;
+}
+
+.status-pending {
+    color: var(--warning);
+    font-weight: 700;
+}
+
+.status-rejected {
+    color: var(--danger);
+    font-weight: 700;
+}
+
+.reason-box {
+    margin-top: 12px;
+    background: rgba(239, 68, 68, 0.08);
+    border-left: 4px solid var(--danger);
+    padding: 12px;
+    border-radius: 10px;
+}
+
+.success-message {
+    background: var(--success);
+    color: white;
+    padding: 14px;
+    border-radius: 12px;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+@media (max-width:768px){
+
+    .verification-page{
+        padding:15px;
+    }
+
+    .verification-card{
+        padding:22px;
+    }
+
+    .verification-title{
+        font-size:1.5rem;
+    }
+
+    .upload-box{
+        padding:20px;
+    }
+
+}
