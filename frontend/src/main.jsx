@@ -24,7 +24,7 @@ window.fetch = async (...args) => {
   ) {
     try {
       const refreshRes = await originalFetch(
-        (import.meta.env.VITE_API_URL || 'http://localhost:8080/api') + '/auth/refresh',
+        (import.meta.env.VITE_API_URL) + '/auth/refresh',
         {
           method: 'POST',
           headers: {

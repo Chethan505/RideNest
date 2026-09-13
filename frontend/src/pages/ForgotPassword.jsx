@@ -22,7 +22,7 @@ const ForgotPassword = () => {
 
         try {
             const response = await fetch(
-                `${import.meta.env.VITE_API_URL || "http://localhost:8080/api"}/auth/forgot-password?email=${encodeURIComponent(email)}`,
+                `${import.meta.env.VITE_API_URL}/auth/forgot-password?email=${encodeURIComponent(email)}`,
                 {
                     method: "POST",
                 }

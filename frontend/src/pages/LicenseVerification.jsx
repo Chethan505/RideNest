@@ -36,7 +36,7 @@ const LicenseVerification = () => {
         }
 
         const res = await fetch(
-            `${import.meta.env.VITE_API_URL || "http://localhost:8080/api"}/auth/profile/license`,
+            `${import.meta.env.VITE_API_URL}/auth/profile/license`,
             {
                 method: "POST",
                 headers: {
@@ -86,7 +86,7 @@ const LicenseVerification = () => {
         try {
 
             const res = await fetch(
-                `${import.meta.env.VITE_API_URL || "http://localhost:8080/api"}/auth/profile`,
+                `${import.meta.env.VITE_API_URL}/auth/profile`,
                 {
                     headers: {
                         Authorization: `Bearer ${token}`

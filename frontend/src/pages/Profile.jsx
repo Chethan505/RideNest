@@ -29,7 +29,7 @@ const Profile = () => {
       try {
 
         const res = await fetch(
-          `${import.meta.env.VITE_API_URL || "http://localhost:8080/api"}/auth/profile`,
+          `${import.meta.env.VITE_API_URL}/auth/profile`,
           {
             headers: {
               Authorization: `Bearer ${token}`
@@ -95,14 +95,14 @@ const Profile = () => {
     const token = localStorage.getItem('token');
     try {
       // Save profile picture
-      await fetch(`${import.meta.env.VITE_API_URL || "http://localhost:8080/api"}/auth/${user.id}/picture`, {
+      await fetch(`${import.meta.env.VITE_API_URL}/auth/${user.id}/picture`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
         body: JSON.stringify({ profilePicture: preview })
       });
 
       // Save profile data
-      const response = await fetch(`${import.meta.env.VITE_API_URL || "http://localhost:8080/api"}/auth/${user.id}/profile`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/auth/${user.id}/profile`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
         body: JSON.stringify(formData)

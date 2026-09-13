@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const API = import.meta.env.VITE_API_URL || 'http://localhost:8080/api';
+const API = import.meta.env.VITE_API_URL;
 
 const AdminDashboard = () => {
   const [stats, setStats] = useState({ totalUsers: 0, totalBookings: 0, activeCars: 0, totalRevenue: 0 });
@@ -35,18 +35,18 @@ const AdminDashboard = () => {
       .then(r => r.json())
       .then(setPendingUsers)
       .catch(console.error);
-    fetch(`${(import.meta.env.VITE_API_URL || 'http://localhost:8080/api').replace('/api', '')}/actuator/health`, { headers }).then(r => r.json()).then(data => {
+    fetch(`${import.meta.env.VITE_API_URL.replace('/api', '')}/actuator/health`, { headers }).then(r => r.json()).then(data => {
       setSysStatus({
         status: data.status,
         db: data.components?.db?.status || 'UNKNOWN'
       });
     }).catch(() => setSysStatus({ status: 'DOWN', db: 'DOWN' }));
 
-    fetch(`${(import.meta.env.VITE_API_URL || 'http://localhost:8080/api').replace('/api', '')}/actuator/metrics/process.uptime`, { headers }).then(r => r.json()).then(data => {
+    fetch(`${import.meta.env.VITE_API_URL.replace('/api', '')}/actuator/metrics/process.uptime`, { headers }).then(r => r.json()).then(data => {
       setMetrics(prev => ({ ...prev, uptime: Math.floor(data.measurements[0].value / 60) }));
     }).catch(console.error);
 
-    fetch(`${(import.meta.env.VITE_API_URL || 'http://localhost:8080/api').replace('/api', '')}/actuator/metrics/http.server.requests`, { headers }).then(r => r.json()).then(data => {
+    fetch(`${import.meta.env.VITE_API_URL.replace('/api', '')}/actuator/metrics/http.server.requests`, { headers }).then(r => r.json()).then(data => {
       setMetrics(prev => ({ ...prev, requests: data.measurements[0].value }));
     }).catch(console.error);
   };
@@ -622,7 +622,7 @@ const AdminDashboard = () => {
                   {user.drivingLicenseImage ? (
 
                     <a
-                      href={user.drivingLicenseImage.startsWith('http') ? user.drivingLicenseImage : `${(import.meta.env.VITE_API_URL || "http://localhost:8080/api").replace("/api", "")}/licenses/${user.drivingLicenseImage}`}
+                      href={user.drivingLicenseImage.startsWith('http') ? user.drivingLicenseImage : `${import.meta.env.VITE_API_URL.replace("/api", "")}/licenses/${user.drivingLicenseImage}`}
                       target="_blank"
                       rel="noreferrer"
                       className="btn btn-outline"
@@ -652,7 +652,7 @@ const AdminDashboard = () => {
                   {user.idProofImage ? (
 
                     <a
-                      href={user.idProofImage.startsWith('http') ? user.idProofImage : `${(import.meta.env.VITE_API_URL || "http://localhost:8080/api").replace("/api", "")}/licenses/${user.idProofImage}`}
+                      href={user.idProofImage.startsWith('http') ? user.idProofImage : `${import.meta.env.VITE_API_URL.replace("/api", "")}/licenses/${user.idProofImage}`}
                       target="_blank"
                       rel="noreferrer"
                       className="btn btn-outline"
